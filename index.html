@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Toolkit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <nav class="tabs">
+      <button class="tab on" data-t="p1">Tekshirgich</button>
+      <button class="tab" data-t="p2">Generator</button>
+      <button class="tab" data-t="p3">Viktorina</button>
+    </nav>
+
+    <section class="pane on" id="p1">
+      <h1><span>&gt;</span> PAROL TEKSHIRGICH</h1>
+      <p class="sub">Parol hech qayerga yuborilmaydi</p>
+      <div class="field">
+        <input type="password" id="pw" placeholder="Parolni kiriting..." autocomplete="off">
+        <button id="eye" type="button">👁</button>
+      </div>
+      <div class="meter"><div id="bar"></div></div>
+      <div id="natija">KUTILMOQDA</div>
+      <div class="stats">
+        <div><small>UZUNLIK</small><b id="len">0</b></div>
+        <div><small>ENTROPIYA</small><b id="ent">0 bit</b></div>
+      </div>
+      <ul id="checks">
+        <li data-r="len">Kamida 12 belgi</li>
+        <li data-r="low">Kichik harf</li>
+        <li data-r="up">Katta harf</li>
+        <li data-r="num">Raqam</li>
+        <li data-r="sym">Maxsus belgi (! @ #)</li>
+      </ul>
+    </section>
+
+    <section class="pane" id="p2">
+      <h1><span>&gt;</span> PAROL GENERATORI</h1>
+      <p class="sub">Tasodifiy va xavfsiz parol yarating</p>
+      <div class="out">
+        <div id="gen">••••••••••••</div>
+        <button id="copy" type="button">Nusxa</button>
+      </div>
+      <label class="lenrow">Uzunlik: <b id="lenv">16</b></label>
+      <input type="range" id="glen" min="8" max="40" value="16">
+      <div class="opts">
+        <label><input type="checkbox" id="oLow" checked> a-z</label>
+        <label><input type="checkbox" id="oUp" checked> A-Z</label>
+        <label><input type="checkbox" id="oNum" checked> 0-9</label>
+        <label><input type="checkbox" id="oSym" checked> !@#$</label>
+      </div>
+      <button id="make" type="button">YARATISH</button>
+    </section>
+    <section class="pane" id="p3">
+      <h1><span>&gt;</span> FISHING VIKTORINASI</h1>
+      <p class="sub">Xabar firibgarlikmi yoki xavfsizmi?</p>
+      <div class="qtop"><span id="qnum">1/8</span><span id="qscore">Ball: 0</span></div>
+      <div class="msg">
+        <small id="qfrom"></small>
+        <p id="qtext"></p>
+      </div>
+      <div class="qbtns" id="qbtns">
+        <button id="qBad" type="button">🚨 FIRIBGARLIK</button>
+        <button id="qGood" type="button">✅ XAVFSIZ</button>
+      </div>
+      <div id="qfb"></div>
+      <button id="qnext" class="hide" type="button">KEYINGISI ▶</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script src="generator.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
